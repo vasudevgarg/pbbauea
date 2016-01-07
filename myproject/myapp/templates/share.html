@@ -1,0 +1,16 @@
+{ % extends "list.html" % }
+{ % block share %}
+
+        <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p> 
+            <p>{{ form.share.label_tag }} {{ form.share.help_text }}</p>
+            <p>
+                {{ form.share.errors }}
+                {{ form.share }}
+            </p>
+            <p><input type="submit" value="share" /></p>
+            </form>
+
+
+{ % endblock % }
